@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-31 16:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: apps.py:9
+msgid "Contact form"
+msgstr "Formulaire de contact"
+
+#: conf.py:12
+msgid "Your message has been sent"
+msgstr "Votre message a été envoyé"
+
+#: models.py:8 models.py:16
+msgid "Email"
+msgstr "Email"
+
+#: models.py:9
+msgid "Subject"
+msgstr "Sujet"
+
+#: models.py:10
+msgid "Message"
+msgstr "Message"
+
+#: models.py:12
+msgid "Date posted"
+msgstr "Posté le"
+
+#: models.py:17
+msgid "Emails"
+msgstr "Emails"
+
+#: templates/qcf/email_form.html:4 templates/qcf/rest_form.html:72
+#: templates/qcf/rest_ok.html:4
+msgid "Contact"
+msgstr "Contact"
+
+#: templates/qcf/rest_form.html:77
+msgid "Save"
+msgstr "Enregistrer"
+
+#: templates/qcf/rest_ok.html:7
+msgid "Your email has been sent, thank you. We will answer soon."
+msgstr ""
+"Votre email a été envoyé, nous vous remercions et allons vous répondre très "
+"bientôt."
+
+#: templates/qcf/rest_ok.html:10
+msgid "Home"
+msgstr "Accueil"
+
+#~ msgid "Back"
+#~ msgstr "Retour"
