@@ -1,0 +1,35 @@
+{% load i18n %}
+<div class="container" style="display:none" v-show="isActive('contact')">
+	<div class="row">
+		<div id="inner_content" class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 text-center">
+			<h1><i class="fa fa-commenting-o"></i>&nbsp;{% trans 'Contact' %}</h1>
+			<form id="contact_form" class="form_horizontal" action="{% url 'contact-rest' %}" method="post">
+				<div v-html="contactForm"></div>
+			</form>
+		</div>
+	</div>
+	<div class="row" v-show="contactResp">
+		<div class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 text-center">
+			<div class="jumbotron text-center">
+				<p>
+					{% trans "Your email has been sent, thank you. We will answer soon" %}
+				</p>
+				<p style="padding-top:2em">
+					<a class="btn btn-default btn-lg" href="/">{% trans "Home" %}</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row" v-show="contactErr">
+		<div class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 text-center">
+			<div class="jumbotron text-center">
+				<p>
+					{% trans "Error sending contact email" %}
+				</p>
+				<p style="padding-top:2em">
+					<a class="btn btn-default btn-lg" href="/">{% trans "Home" %}</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
