@@ -12,11 +12,9 @@ function postContactForm() {
 	      url: url,
 	      data: JSON.stringify(frm),
 	      success: function (response) {
-	    	  console.log("resp");
 	    	  if (response.ok == 1) {
 	    		  app.contactForm = "";
 	    		  app.contactResp = true;
-	    		  console.log("ok");
 	    	  } else {
 	    		  app.contactForm = "";
 	    		  app.contactErr = true;
