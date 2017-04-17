@@ -9,7 +9,6 @@ loadContactForm: function() {
 	this.loadRawData("{% url 'contact-rest' %}", action);
 },
 postContactForm: function() {
-	console.log("POST");
 	var url = "{% url 'contact-rest' %}";
 	var arr = $("#contact_form").serializeArray();
 	var frm = {};
@@ -30,6 +29,5 @@ postContactForm: function() {
 		app.activate("pageContent");
 		document.title = "{% trans 'Contact' %}";
 	}
-	console.log(frm);
 	this.postForm(url, frm, action, error, frm.csrfmiddlewaretoken)
 },
