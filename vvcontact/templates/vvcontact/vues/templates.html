@@ -3,8 +3,9 @@
 	<div class="row">
 		<div id="inner_content" class="col-xs-12 col-md-offset-1 col-md-10 col-md-offset-1 text-center">
 			<h1><i class="fa fa-commenting-o"></i>&nbsp;{% trans 'Contact' %}</h1>
-			<form id="contact_form" class="form_horizontal" action="{% url 'contact-rest' %}" method="post">
+			<form id="contact_form" class="form_horizontal" onsubmit="return false" method="post">
 				<div v-html="contactForm"></div>
+				<input type="submit" class="btn btn-block btn-lg btn-primary" @click="postContactForm()" value="{% trans 'Save' %}" />
 			</form>
 		</div>
 	</div>

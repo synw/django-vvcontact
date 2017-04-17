@@ -9,6 +9,7 @@ from django.http.response import Http404
 from django.views.generic import CreateView
 from django.views.generic.base import TemplateView
 from django.utils.html import escape
+from django.template import loader, Context
 from vvcontact.models import Email
 from vvcontact.forms import EmailForm
 from vvcontact.conf import SAVE_TO_DB, RECIPIENTS_LIST
@@ -31,7 +32,7 @@ class AddPostView(CreateView):
         subject = escape(data['subject'])
         content = escape(data['content'])
         if check_csrf(request) == False:
-            return JsonResponse({"ok":0})
+            return JsonResponse({"error":1, "content":""})
         formated_request = ''
         for key in self.request.META.keys():
             formated_request += str(key)+' : '+str(self.request.META[key])+'\n'
@@ -39,7 +40,10 @@ class AddPostView(CreateView):
         send_mail(subject, content, email, RECIPIENTS_LIST)
         if SAVE_TO_DB == True:
             Email.objects.create(email=email, content=content, subject=subject, request=formated_request)
-        return JsonResponse({"ok":1})
+        t = loader.get_template('vvcontact/rest_ok.html')
+        c = Context({})
+        rendered = t.render(c)
+        return JsonResponse({"error":0, "content": rendered})
 
 
 class AddPostRestView(AddPostView):
