@@ -6,7 +6,7 @@ loadContactForm: function() {
 		app.activate("contact");
 		document.title = "{% trans 'Contact' %}";
 	}
-	this.loadRawData("{% url 'contact-rest' %}", action);
+	this.loadData("{% url 'contact-rest' %}", action);
 },
 postContactForm: function() {
 	var url = "{% url 'contact-rest' %}";
