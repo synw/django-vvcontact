@@ -4,7 +4,7 @@
 		<h1><i class="fa fa-commenting-o"></i>&nbsp;{% trans 'Contact' %}</h1>
 		<form id="contact_form" class="form_horizontal" onsubmit="return false" method="post">
 			<div v-html="contactForm"></div>
-			<input type="submit" class="btn btn-block btn-lg btn-primary" @click="postContactForm()" value="{% trans 'Save' %}" />
+			<input type="submit" class="btn-fw" @click="postContactForm()" value="{% trans 'Save' %}" />
 		</form>
 	</div>
 	<div v-show="contactResp">
@@ -13,17 +13,17 @@
 				{% trans "Your email has been sent, thank you. We will answer soon" %}
 			</p>
 			<p style="padding-top:2em">
-				<a class="btn btn-default btn-lg" href="/">{% trans "Home" %}</a>
+				<a href="/">{% trans "Home" %}</a>
 			</p>
 		</div>
 	</div>
 	<div v-show="contactErr">
-		<div class="jumbotron text-center">
+		<div class="gc">
 			<p>
 				{% trans "Error sending contact email" %}
 			</p>
 			<p style="padding-top:2em">
-				<a class="btn btn-default btn-lg" href="/">{% trans "Home" %}</a>
+				<a href="/">{% trans "Home" %}</a>
 			</p>
 		</div>
 	</div>
