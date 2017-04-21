@@ -10,12 +10,8 @@ loadContactForm: function() {
 },
 postContactForm: function() {
 	var url = "{% url 'contact-rest' %}";
-	var arr = $("#contact_form").serializeArray();
-	var frm = {};
-	for (i=0;i<arr.length;i++) {
-		var el = arr[i];
-		frm[el.name] = el.value;
-	}
+	var form = document.getElementById("contact_form");
+	var frm = this.serializeForm(form);
 	function error(err) {
 		console.log(err)
 	}
