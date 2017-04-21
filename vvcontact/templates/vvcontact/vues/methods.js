@@ -3,7 +3,7 @@ loadContactForm: function() {
 	action = function(data) {
 		app.flush();
 		app.contactForm = data;
-		app.activate("contact");
+		app.activate(["contact"]);
 		document.title = "{% trans 'Contact' %}";
 	}
 	this.loadData("{% url 'contact-rest' %}", action);
@@ -22,7 +22,7 @@ postContactForm: function() {
 		}
 		app.pageContent = response.data.content;
 		app.flush();
-		app.activate("pageContent");
+		app.activate(["pageContent"]);
 		document.title = "{% trans 'Contact' %}";
 	}
 	this.postForm(url, frm, action, error, frm.csrfmiddlewaretoken)
